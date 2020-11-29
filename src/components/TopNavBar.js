@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { View, Text, StyleSheet, StatusBar, Button, TouchableOpacity } from 'react-native';
+import { View, Text, StyleSheet, StatusBar, Image, TouchableOpacity } from 'react-native';
 import config from '../config';
 
 export default class TopNavBar extends Component {
@@ -8,8 +8,11 @@ export default class TopNavBar extends Component {
         <View style={style.navbar}>
           <View style={style.alignItems}>
             <Text style={style.title}>WorkoutBuddy</Text>
-            <TouchableOpacity style={style.userButton} underlayColor='#fff'>
-              <Text style={{color:"white"}}>Login</Text>
+            <TouchableOpacity style={style.userButton}>
+                <Image 
+                  source={require('../assets/icons/chatting.png')} 
+                  style={{height: 30, width: 30}}
+                />
             </TouchableOpacity>
           </View>
         </View>
@@ -23,7 +26,8 @@ const style = StyleSheet.create({
     paddingLeft: 10,
     paddingRight: 10,
     backgroundColor: config.mainColor,
-    justifyContent: "flex-end"
+    borderBottomWidth: 5,
+    borderColor: config.mainColorDark,
   },
   title: {
     fontFamily: 'Roboto',
@@ -41,8 +45,5 @@ const style = StyleSheet.create({
     paddingRight: 20,
     paddingTop: 20,
     paddingBottom: 20,
-    borderBottomWidth: 5,
-    fontWeight: "bold",
-    borderColor: config.mainColorDark,
   }
 })

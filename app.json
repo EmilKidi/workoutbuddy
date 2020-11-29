@@ -27,6 +27,7 @@
     },
     "web": {
       "favicon": "./src/assets/favicon.png"
-    }
+    },
+    "description": "Just for personal use so far"
   }
 }
