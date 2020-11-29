@@ -4,25 +4,33 @@ import config from '../config';
 
 export default class BottomNavBar extends Component {
   render() {
+    const navigation = this.props.navigation;
+    
     return (
         <View style={style.bottomBar}>
-            <TouchableOpacity style={[style.userButton, {width: "25%"}]}>
-                <Image 
-                  source={require('../assets/icons/home.png')} 
-                  style={style.icons}
-                />
+            <TouchableOpacity 
+              style={[style.userButton, {width: "25%"}]} 
+              onPress={() => navigation.navigate('HomeScreen')}
+            >
+              <Image 
+                source={require('../assets/icons/home.png')} 
+                style={style.icons}
+              />
             </TouchableOpacity>
-            <TouchableOpacity style={[style.userButton, {width: "50%"}]}>
-                <Image 
-                  source={require('../assets/icons/add.png')} 
-                  style={style.icons}
-                />
+            <TouchableOpacity 
+              style={[style.userButton, {width: "50%"}]}
+              onPress={() => navigation.navigate('AddScreen')}
+            >
+              <Image 
+                source={require('../assets/icons/add.png')} 
+                style={style.icons}
+              />
             </TouchableOpacity>
             <TouchableOpacity style={[style.userButton, {width: "25%"}]}>
-                <Image 
-                  source={require('../assets/icons/settings.png')} 
-                  style={style.icons}
-                />
+              <Image 
+                source={require('../assets/icons/settings.png')} 
+                style={style.icons}
+              />
             </TouchableOpacity>
         </View>
     );

@@ -4,15 +4,22 @@ import config from '../config';
 
 export default class TopNavBar extends Component {
   render() {
+    const navigation = this.props.navigation;
+
     return (
         <View style={style.navbar}>
           <View style={style.alignItems}>
-            <Text style={style.title}>WorkoutBuddy</Text>
-            <TouchableOpacity style={style.userButton}>
-                <Image 
-                  source={require('../assets/icons/chatting.png')} 
-                  style={{height: 30, width: 30}}
-                />
+            <TouchableOpacity style={style.alignItems} onPress={() => navigation.navigate('HomeScreen')}>
+              <Text style={style.title}>WorkoutBuddy</Text>
+            </TouchableOpacity>
+            <TouchableOpacity 
+              style={style.userButton}
+              onPress={() => navigation.navigate('ProfileScreen')}
+            >
+              <Image 
+                source={require('../assets/icons/chatting.png')} 
+                style={{height: 30, width: 30}}
+              />
             </TouchableOpacity>
           </View>
         </View>

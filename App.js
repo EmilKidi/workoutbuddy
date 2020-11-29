@@ -1,28 +1,22 @@
+import 'react-native-gesture-handler';
 import * as React from 'react'
-import { StatusBar } from 'expo-status-bar';
-import { Text, TouchableOpacity, View, StyleSheet } from 'react-native';
+import { NavigationContainer } from '@react-navigation/native';
+import { createStackNavigator } from '@react-navigation/stack';
 
-import TopNavBar from './src/components/TopNavBar';
-import BottomNavBar from './src/components/BottomNavBar';
+import HomeScreen from './src/screens/HomeScreen';
+import AddScreen from './src/screens/AddScreen';
+import ProfileScreen from './src/screens/ProfileScreen';
+
+const Stack = createStackNavigator();
 
 export default function App() {
   return (
-  <React.Fragment>
-    <TopNavBar style={{flex:1}} />
-    <View style={styles.container}>
-      <TouchableOpacity>
-        <Text>Feed</Text>
-      </TouchableOpacity>
-      <StatusBar style="auto" />
-    </View>
-    <BottomNavBar />
-    </React.Fragment>
+    <NavigationContainer>
+      <Stack.Navigator initialRouteName="Add">
+        <Stack.Screen name="HomeScreen" component={HomeScreen} options={{headerShown: false}} />
+        <Stack.Screen name="AddScreen" component={AddScreen} options={{headerShown: false}} />
+        <Stack.Screen name="ProfileScreen" component={ProfileScreen} options={{headerShown: false}} />
+      </Stack.Navigator>
+    </NavigationContainer>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-  },
-});
