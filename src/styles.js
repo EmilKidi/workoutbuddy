@@ -11,17 +11,26 @@ export default StyleSheet.create({
   topBar: {
     flex: 1,
   },
-  SquareButton: {
+  bigAddbtnBG: {
+    flex:3,
+    backgroundColor:config.lightGrey,
+    justifyContent:"center", 
+    alignItems: 'center',
+  },
+  bigAddbtn: {
     fontSize: 50,
     padding: btnPadding,
-    backgroundColor: config.mainColor,
-    borderBottomColor: config.mainColorDark,
     paddingLeft: btnPadding + 20,
     paddingRight: btnPadding + 20,
   },
-  SquareButtonTxt: {
-    color: "white",
-    fontWeight: "bold",
-    fontSize: 20,
-  }
+  recentWorkoutContainer: {
+    flex:7,
+  },
+  progresstxt: {
+    margin:10,
+    padding:10,
+    fontWeight:"bold", 
+    fontSize:20,
+    color: config.txtgrey,
+  },
 });
