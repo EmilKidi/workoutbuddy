@@ -1,11 +1,10 @@
 import React, { Component } from 'react';
 import { View, Text, StyleSheet, TouchableOpacity, Image } from 'react-native';
 import config from '../config';
+import styles from '../styles';
 
-export default class BottomNavBar extends Component {
+export default class WorkoutCard extends Component {
   render() {
-    const navigation = this.props.navigation;
-    
     return (
         <View style={style.bottomBar}>
             <TouchableOpacity 
@@ -36,25 +35,3 @@ export default class BottomNavBar extends Component {
     );
   }
 }
-
-const style = StyleSheet.create({
-  bottomBar: {
-    paddingLeft: 10,
-    paddingRight: 10,
-    width: "100%",
-    justifyContent: "center",
-    flexDirection: "row",
-    borderTopWidth: 1,
-    borderColor: config.lightGrey,
-  },
-  icons: {
-    marginBottom: 20,
-    marginTop: 30,
-    height: 30, 
-    width: 30, 
-    alignSelf: "center",
-  },
-  userButton: {
-    fontWeight: "bold",
-  }
-})

@@ -17,7 +17,7 @@ export default class TopNavBar extends Component {
               onPress={() => navigation.navigate('ProfileScreen')}
             >
               <Image 
-                source={require('../assets/icons/chatting.png')} 
+                source={require('../assets/icons/bell.png')} 
                 style={{height: 30, width: 30}}
               />
             </TouchableOpacity>
