@@ -19,7 +19,7 @@ export default class BottomNavBar extends Component {
             </TouchableOpacity>
             <TouchableOpacity 
               style={[style.userButton, {width: "50%"}]}
-              onPress={() => navigation.navigate('AddScreen')}
+              onPress={() => navigation.navigate('OverviewScreen')}
             >
               <Image 
                 source={require('../assets/icons/add.png')} 
